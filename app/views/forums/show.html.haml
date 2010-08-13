@@ -1,0 +1,32 @@
+%h1(style='color:red;')= @forum.title
+
+%ol
+  - for message in @messages
+    %li
+      %p
+        - if message.email.blank?
+          %strong(style='color:green;')
+            = ( message.name.blank? ? '名無しさん' : message.name )
+        - else
+          %strong
+            = mail_to(message.email, ( message.name.blank? ? '名無しさん' : message.name ) )
+        = message.created_at.strftime("%Y年%m月%d日 %H:%M")
+      %p
+        = message.body
+
+%hr
+.forum-nav
+  = link_to '掲示板に戻る', @forum.board
+  = link_to '全部', board_forum_path(@forum)
+  = link_to '最新50', board_forum_path(@forum, :filter => 'l50')
+%hr
+- form_for @new_message, :url => [:create_message, @forum.board, @forum] do |f|
+  %fieldset
+    %div
+      = f.submit '書き込む'
+      = f.label :name
+      = f.text_field :name
+      = f.label :name, 'E-mail(省略可)'
+      = f.text_field :email
+    %div
+      = f.text_area :body, :size => '80x5'

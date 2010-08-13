@@ -1,0 +1,6 @@
+%h2= @board.title
+
+%p
+  - @forums.each_with_index do |forum, index|
+    = link_to "#{index+1}:#{forum.title}（#{forum.messages.count}）", board_forum_path(@board, forum, :filter => '-50')
+    &nbsp;

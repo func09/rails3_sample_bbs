@@ -1,0 +1,6 @@
+.board-list
+  %h2 板一覧
+  %ul
+    - for board in boards
+      %li
+        = link_to board.title, board
