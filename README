@@ -1,4 +1,6 @@
-= Rails3 Sample BBS
+= Rails3 Sample BBS with MongoDB & Mongoid
 
-# Insert sample data
+% bundle install
+% mongod --dbpath /path/to/db
 % rake db:seed
+% rails s
