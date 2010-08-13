@@ -1,5 +1,5 @@
 Bbs::Application.routes.draw do
-
+  root :to => 'boards#index'
   resources :boards, :only => [:index, :show] do 
     resources :forums, :only => [:index, :show] do
       post :create_message, :on => :member
