@@ -30,6 +30,8 @@ GEM
     activesupport (3.0.0.rc)
     arel (0.4.0)
       activesupport (>= 3.0.0.beta)
+    bson (1.0.4)
+    bson_ext (1.0.4)
     builder (2.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -40,6 +42,14 @@ GEM
       mime-types
       treetop (>= 1.4.5)
     mime-types (1.16)
+    mongo (1.0.7)
+      bson (>= 1.0.4)
+    mongoid (2.0.0.beta.16)
+      activemodel (= 3.0.0.rc)
+      bson (= 1.0.4)
+      mongo (= 1.0.7)
+      tzinfo (= 0.3.22)
+      will_paginate (~> 3.0.pre)
     nifty-generators (0.4.0)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -67,12 +77,15 @@ GEM
     treetop (1.4.8)
       polyglot (>= 0.3.1)
     tzinfo (0.3.22)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext (= 1.0.4)
   haml
+  mongoid (= 2.0.0.beta.16)
   nifty-generators
   rails (= 3.0.0.rc)
   rails3-generators

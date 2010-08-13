@@ -5,7 +5,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
-    @forums = @board.forums.order('updated_at DESC')
+    @forums = @board.forums.desc(:updated_at)
   end
 
 end

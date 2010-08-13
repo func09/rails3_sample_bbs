@@ -18,14 +18,15 @@ forum_names = [
   '志村ー！上、上、下、下、左、右、左、右、Ｂ、Ａ！',
 ]
 
-Board.find_each do |board|
+Board.all.each do |board|
   10.times do |i|
     name = forum_names.shuffle.first
     forum = board.forums.create :title => "#{name} #{rand(99)}"
 
     100.times do
+      random = rand(999)%2 > 0
       forum.messages.create :name => nil,
-      :email => 'sage',
+      :email => random ? 'sage' : '',
       :body => 'あいうえお'
     end
     
