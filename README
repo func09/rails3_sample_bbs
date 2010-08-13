@@ -4,3 +4,4 @@
 % mongod --dbpath /path/to/db
 % rake db:seed
 % rails s
+% open http://localhost:3000
