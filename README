@@ -4,3 +4,4 @@
 % rake db:migrate
 % rake db:seed
 % rails s
+% open http://localhost:3000
